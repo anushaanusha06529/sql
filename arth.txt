@@ -1,0 +1,120 @@
+SQL> SELECT SAL>500 FROM EMP;
+SELECT SAL>500 FROM EMP
+          *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT SAL+500 FROM EMP;
+
+   SAL+500                                                                      
+----------                                                                      
+      1300                                                                      
+      2100                                                                      
+      1750                                                                      
+      3475                                                                      
+      1750                                                                      
+      3350                                                                      
+      2950                                                                      
+      3500                                                                      
+      5500                                                                      
+      2000                                                                      
+      1600                                                                      
+
+   SAL+500                                                                      
+----------                                                                      
+      1450                                                                      
+      3500                                                                      
+      1800                                                                      
+
+14 rows selected.
+
+SQL> SELECT ENAME,JAB,SAL-500 FROM EMP;
+SELECT ENAME,JAB,SAL-500 FROM EMP
+             *
+ERROR at line 1:
+ORA-00904: "JAB": invalid identifier 
+
+
+SQL> SELECT ENAME,JOB,SAL-500 FROM EMP;
+
+ENAME      JOB          SAL-500                                                 
+---------- --------- ----------                                                 
+SMITH      CLERK            300                                                 
+ALLEN      SALESMAN        1100                                                 
+WARD       SALESMAN         750                                                 
+JONES      MANAGER         2475                                                 
+MARTIN     SALESMAN         750                                                 
+BLAKE      MANAGER         2350                                                 
+CLARK      MANAGER         1950                                                 
+SCOTT      ANALYST         2500                                                 
+KING       PRESIDENT       4500                                                 
+TURNER     SALESMAN        1000                                                 
+ADAMS      CLERK            600                                                 
+
+ENAME      JOB          SAL-500                                                 
+---------- --------- ----------                                                 
+JAMES      CLERK            450                                                 
+FORD       ANALYST         2500                                                 
+MILLER     CLERK            800                                                 
+
+14 rows selected.
+
+SQL> SELECT SAL*12 FROM EMP WHERE JOB='CLERK';
+
+    SAL*12                                                                      
+----------                                                                      
+      9600                                                                      
+     13200                                                                      
+     11400                                                                      
+     15600                                                                      
+
+SQL> SELECT SAL+(SAL*3/100) FROM EMP;
+
+SAL+(SAL*3/100)                                                                 
+---------------                                                                 
+            824                                                                 
+           1648                                                                 
+         1287.5                                                                 
+        3064.25                                                                 
+         1287.5                                                                 
+         2935.5                                                                 
+         2523.5                                                                 
+           3090                                                                 
+           5150                                                                 
+           1545                                                                 
+           1133                                                                 
+
+SAL+(SAL*3/100)                                                                 
+---------------                                                                 
+          978.5                                                                 
+           3090                                                                 
+           1339                                                                 
+
+14 rows selected.
+
+SQL> SELECT SAL/2,COMM*6 FROM EMP;
+
+     SAL/2     COMM*6                                                           
+---------- ----------                                                           
+       400                                                                      
+       800       1800                                                           
+       625       3000                                                           
+    1487.5                                                                      
+       625       8400                                                           
+      1425                                                                      
+      1225                                                                      
+      1500                                                                      
+      2500                                                                      
+       750          0                                                           
+       550                                                                      
+
+     SAL/2     COMM*6                                                           
+---------- ----------                                                           
+       475                                                                      
+      1500                                                                      
+       650                                                                      
+
+14 rows selected.
+
+SQL> SPOOL TXT
